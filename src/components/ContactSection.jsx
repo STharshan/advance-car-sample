@@ -1,4 +1,5 @@
 import React, { useState } from 'react';
+import { appointmentContent } from '../global';
 
 const AppointmentSection = () => {
     const [formData, setFormData] = useState({
@@ -35,7 +36,7 @@ const AppointmentSection = () => {
                             <h2 
                                 className="text-5xl sm:text-6xl lg:text-7xl font-black leading-none uppercase"
                                 style={{
-                                    backgroundImage: 'url("/about.png")', // Replace with your car image
+                                    backgroundImage: `url("${appointmentContent.headingImage}")`,
                                     backgroundSize: 'cover',
                                     backgroundPosition: 'center',
                                     backgroundClip: 'text',
@@ -44,14 +45,13 @@ const AppointmentSection = () => {
                                     color: 'transparent'
                                 }}
                             >
-                                LET'S BOOK AN APPOINTMENT
+                                {appointmentContent.heading}
                             </h2>
                         </div>
 
                         {/* Form */}
                         <form onSubmit={handleSubmit} className="relative z-10 space-y-4">
                             <div className="grid grid-cols-1 sm:grid-cols-2 gap-4">
-                                {/* Name */}
                                 <input
                                     type="text"
                                     name="name"
@@ -62,7 +62,6 @@ const AppointmentSection = () => {
                                     required
                                 />
 
-                                {/* Vehicle Type */}
                                 <input
                                     type="text"
                                     name="vehicleType"
@@ -74,7 +73,6 @@ const AppointmentSection = () => {
                             </div>
 
                             <div className="grid grid-cols-1 sm:grid-cols-2 gap-4">
-                                {/* Phone Number */}
                                 <input
                                     type="tel"
                                     name="phoneNumber"
@@ -85,11 +83,9 @@ const AppointmentSection = () => {
                                     required
                                 />
 
-                                {/* Preferred Service Date */}
                                 <input
                                     type="date"
                                     name="preferredDate"
-                                    placeholder="Preferred service date"
                                     value={formData.preferredDate}
                                     onChange={handleChange}
                                     className="w-full px-6 py-4 rounded-full border border-gray-300 dark:border-gray-700 focus:outline-none focus:border-[#E7000B] dark:focus:border-[#E7000B] bg-white dark:bg-neutral-900 text-[#111827] dark:text-white transition-colors"
@@ -97,7 +93,6 @@ const AppointmentSection = () => {
                             </div>
 
                             <div className="grid grid-cols-1 sm:grid-cols-2 gap-4">
-                                {/* Email */}
                                 <input
                                     type="email"
                                     name="email"
@@ -108,18 +103,15 @@ const AppointmentSection = () => {
                                     required
                                 />
 
-                                {/* Preferred Service Time */}
                                 <input
                                     type="time"
                                     name="preferredTime"
-                                    placeholder="Preferred service time"
                                     value={formData.preferredTime}
                                     onChange={handleChange}
                                     className="w-full px-6 py-4 rounded-full border border-gray-300 dark:border-gray-700 focus:outline-none focus:border-[#E7000B] dark:focus:border-[#E7000B] bg-white dark:bg-neutral-900 text-[#111827] dark:text-white transition-colors"
                                 />
                             </div>
 
-                            {/* Additional Requests */}
                             <textarea
                                 name="additionalRequests"
                                 placeholder="Any additional requests regarding your car?"
@@ -129,48 +121,46 @@ const AppointmentSection = () => {
                                 className="w-full px-6 py-4 rounded-3xl border border-gray-300 dark:border-gray-700 focus:outline-none focus:border-[#E7000B] dark:focus:border-[#E7000B] bg-white dark:bg-neutral-900 text-[#111827] dark:text-white transition-colors resize-none"
                             ></textarea>
 
-                            {/* Submit Button */}
                             <button
                                 type="submit"
                                 className="bg-primary bg-secondary-hover text-white font-bold py-4 px-10 rounded-full transition-all duration-300 transform hover:scale-105 shadow-lg hover:shadow-xl uppercase text-sm tracking-wide"
                             >
-                                Submit Message
+                                {appointmentContent.submitText}
                             </button>
                         </form>
                     </div>
 
                     {/* Right Side - Contact Information */}
                     <div className="space-y-8 lg:pl-8 text-[#111827] dark:text-white">
-                        {/* Phone Section */}
                         <div>
                             <h3 className="text-3xl sm:text-4xl font-black text-primary mb-4">
                                 PHONE
                             </h3>
                             <div className="space-y-2">
-                                <p className="text-base sm:text-lg"> (406) 555-0120 </p>
-                                <p className="text-base sm:text-lg"> (316) 555-0116 </p>
+                                {appointmentContent.phones.map((phone, i) => (
+                                    <p key={i} className="text-base sm:text-lg">{phone}</p>
+                                ))}
                             </div>
                         </div>
 
-                        {/* Kentucky Office Section */}
                         <div>
                             <h3 className="text-3xl sm:text-4xl font-black text-primary mb-4">
-                                KENTUCKY OFFICE
+                                {appointmentContent.officeTitle}
                             </h3>
                             <p className="text-base sm:text-lg">
-                                4517 Washington Ave. Manchester,<br />
-                                Kentucky 39495
+                                {appointmentContent.officeAddress.map((line, i) => (
+                                    <span key={i}>{line}<br /></span>
+                                ))}
                             </p>
                         </div>
 
-                        {/* Opening Hours Section */}
                         <div>
                             <h3 className="text-3xl sm:text-4xl font-black text-primary mb-4">
-                                OPENING HOURS
+                                {appointmentContent.hoursTitle}
                             </h3>
                             <div className="space-y-2">
-                                <p className="text-base sm:text-lg">09:00 am - 06:00 pm</p>
-                                <p className="text-base sm:text-lg">Monday - Friday</p>
+                                <p className="text-base sm:text-lg">{appointmentContent.hoursTime}</p>
+                                <p className="text-base sm:text-lg">{appointmentContent.hoursDays}</p>
                             </div>
                         </div>
                     </div>

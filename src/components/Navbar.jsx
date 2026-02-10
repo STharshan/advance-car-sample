@@ -1,7 +1,8 @@
 import React, { useState, useEffect } from "react";
-import ThemeToggle from "../components/ThemeToggle"; // adjust path if needed
+import ThemeToggle from "../components/ThemeToggle";
+import { NavbarLogo } from "../global";
 
-const Navbar = () => {
+const Navbar = ({ logo = NavbarLogo.logo }) => {
   const [isMenuOpen, setIsMenuOpen] = useState(false);
   const [activeLink, setActiveLink] = useState("#home");
 
@@ -38,19 +39,21 @@ const Navbar = () => {
       <div className="max-w-8xl px-8 mx-auto">
         <div className="flex items-center justify-between h-24">
 
-          {/* Logo on the left */}
-          <div className="shrink-0">
-            <img src="/logo.png" alt="Mirage Detailing" className="h-7 object-contain" />
-          </div>
+          {/* Logo from prop */}
+          <img
+            src={logo}
+            alt="Logo"
+            className="h-7 object-contain"
+          />
 
-          {/* Desktop Menu in center */}
+          {/* Desktop Menu */}
           <div className="hidden lg:flex items-center space-x-10">
             {navLinks.map((link) => (
               <a
                 key={link.href}
                 href={link.href}
                 onClick={() => setActiveLink(link.href)}
-                className="relative text-white text-secondary-hover hover:font-semibold font-semibold tracking-widest group"
+                className="relative text-white font-semibold tracking-widest group"
               >
                 {link.name}
                 <span
@@ -61,70 +64,45 @@ const Navbar = () => {
             ))}
           </div>
 
-          {/* "Get a Quote" + Theme Toggle on right */}
+          {/* Right Side */}
           <div className="hidden lg:flex items-center space-x-4">
             <ThemeToggle />
             <a
               href="#quote"
-              className="bg-primary bg-secondary-hover text-white px-6 py-3 text-sm font-bold tracking-widest rounded transition"
+              className="bg-primary text-white px-6 py-3 text-sm font-bold tracking-widest rounded"
             >
               GET A QUOTE
             </a>
           </div>
 
-          {/* Mobile Toggle */}
+          {/* Mobile */}
           <button
             onClick={() => setIsMenuOpen(!isMenuOpen)}
-            className="lg:hidden text-white"
+            className="lg:hidden text-white text-2xl"
           >
-            <svg className="w-7 h-7" fill="none" stroke="currentColor" viewBox="0 0 24 24">
-              <path
-                strokeLinecap="round"
-                strokeLinejoin="round"
-                strokeWidth={2}
-                d={
-                  isMenuOpen
-                    ? "M6 18L18 6M6 6l12 12"
-                    : "M4 6h16M4 12h16M4 18h16"
-                }
-              />
-            </svg>
+            ☰
           </button>
-
         </div>
       </div>
 
       {/* Mobile Menu */}
       {isMenuOpen && (
-        <div className="lg:hidden bg-black/95 backdrop-blur-sm">
-          <div className="px-6 py-6 space-y-5">
-            {navLinks.map((link) => (
-              <a
-                key={link.href}
-                href={link.href}
-                onClick={() => {
-                  setActiveLink(link.href);
-                  setIsMenuOpen(false);
-                }}
-                className={`block text-white text-sm font-bold tracking-widest border-b border-white/10 pb-2
-                  ${activeLink === link.href ? "text-primary" : "text-secondary-hover"}`}
-              >
-                {link.name}
-              </a>
-            ))}
+        <div className="lg:hidden bg-black/95 px-6 py-6 space-y-5">
+          {navLinks.map((link) => (
+            <a
+              key={link.href}
+              href={link.href}
+              onClick={() => {
+                setActiveLink(link.href);
+                setIsMenuOpen(false);
+              }}
+              className="block text-white font-bold tracking-widest border-b border-white/10 pb-2"
+            >
+              {link.name}
+            </a>
+          ))}
 
-            {/* Dark/Light Mode Toggle */}
-            <div className="pt-4 flex justify-center">
-              <ThemeToggle className="w-full" />
-            </div>
-          </div>
-
-          <a
-            href="#quote"
-            className="block bg-primary text-white text-center py-4 font-bold tracking-widest bg-secondary-hover transition"
-          >
-            GET A QUOTE
-          </a>
+          <ThemeToggle />
         </div>
       )}
     </nav>
