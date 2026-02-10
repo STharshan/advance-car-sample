@@ -53,6 +53,14 @@ const PPFServices = () => {
     return (
         <div className="bg-linear-to-b from-gray-900 to-gray-800 py-12 px-8">
             <div className="max-w-8xl mx-auto">
+                <div className="mb-8 sm:mb-12">
+                    <div className="flex items-center gap-4">
+                        <div className="w-1 h-16 sm:h-20 bg-red-600"></div>
+                        <h2 className="text-4xl sm:text-5xl lg:text-6xl font-black text-white">
+                            OUR SERVICES
+                        </h2>
+                    </div>
+                </div>
                 <div className="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-4 gap-6">
                     {services.map((service, index) => (
                         <div

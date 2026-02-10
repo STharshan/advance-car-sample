@@ -9,7 +9,7 @@ const Reviews = () => {
             review: '"I had my interior detailing done at CarWash, and they did an incredible job! My car looks and smells like new again. The attention to detail and the level of cleanliness they achieved exceeded my expectations. Highly recommended!"',
             rating: 5,
             service: 'AUDI TT / Ceramic Coating',
-            image: '/api/placeholder/400/600' // Replace with actual image
+            image: '/im1.jpeg'
         },
         {
             id: 2,
@@ -18,7 +18,7 @@ const Reviews = () => {
             review: '"Outstanding service! The team was professional and thorough. My BMW looks brand new after their paint protection film installation. Worth every penny!"',
             rating: 5,
             service: 'BMW M3 / PPF Installation',
-            image: '/api/placeholder/400/600'
+            image: '/im2.jpeg'
         },
         {
             id: 3,
@@ -27,7 +27,7 @@ const Reviews = () => {
             review: '"Exceptional quality and attention to detail. They transformed my car completely. The ceramic coating has made maintenance so much easier. Highly recommend their services!"',
             rating: 5,
             service: 'MERCEDES C-CLASS / Ceramic Coating',
-            image: '/api/placeholder/400/600'
+            image: '/im3.jpeg'
         }
     ];
 
@@ -89,7 +89,7 @@ const Reviews = () => {
                     </div>
 
                     {/* Right Side - Review Details */}
-                    <div className="space-y-6">
+                    <div className="space-y-6 relative">
                         {/* Name with Initial Circle */}
                         <div className="flex items-center gap-4">
                             <div className="w-12 h-12 sm:w-14 sm:h-14 bg-red-600 rounded-full flex items-center justify-center shrink-0">
@@ -117,11 +117,11 @@ const Reviews = () => {
                             </p>
                         </div>
 
-                        {/* Navigation Arrows */}
-                        <div className="flex gap-4 pt-4">
+                        {/* Navigation Arrows at Bottom Right */}
+                        <div className="absolute -bottom-20 right-0 flex gap-4 mt-4">
                             <button
                                 onClick={prevReview}
-                                className="w-12 h-12 sm:w-14 sm:h-14 rounded-full border-2 border-gray-300 hover:border-red-600 flex items-center justify-center transition-all duration-300 hover:bg-red-600 hover:text-white group"
+                                className="w-12 h-12 sm:w-14 sm:h-14 rounded-full border-2 border-gray-300 hover:border-red-600 flex items-center justify-center transition-all duration-300 hover:bg-red-600 hover:text-white"
                                 aria-label="Previous review"
                             >
                                 <svg
@@ -140,7 +140,7 @@ const Reviews = () => {
                             </button>
                             <button
                                 onClick={nextReview}
-                                className="w-12 h-12 sm:w-14 sm:h-14 rounded-full border-2 border-gray-300 hover:border-red-600 flex items-center justify-center transition-all duration-300 hover:bg-red-600 hover:text-white group"
+                                className="w-12 h-12 sm:w-14 sm:h-14 rounded-full border-2 border-gray-300 hover:border-red-600 flex items-center justify-center transition-all duration-300 hover:bg-red-600 hover:text-white"
                                 aria-label="Next review"
                             >
                                 <svg
@@ -161,7 +161,7 @@ const Reviews = () => {
                     </div>
                 </div>
 
-                {/* Dots Indicator (optional) */}
+                {/* Dots Indicator (optional for mobile) */}
                 <div className="flex justify-center gap-2 mt-8 lg:hidden">
                     {reviews.map((_, index) => (
                         <button
