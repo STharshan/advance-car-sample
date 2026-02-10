@@ -81,7 +81,7 @@ const Reviews = () => {
                             <img
                                 src={currentReview.image}
                                 alt="Client's car"
-                                className="w-full h-[400px] sm:h-[500px] lg:h-[600px] object-cover"
+                                className="w-full h-100 sm:h-125 lg:h-150 object-cover"
                             />
                             {/* Decorative line */}
                             <div className="absolute top-0 right-0 w-20 h-1 bg-red-600"></div>
@@ -92,7 +92,7 @@ const Reviews = () => {
                     <div className="space-y-6">
                         {/* Name with Initial Circle */}
                         <div className="flex items-center gap-4">
-                            <div className="w-12 h-12 sm:w-14 sm:h-14 bg-red-600 rounded-full flex items-center justify-center flex-shrink-0">
+                            <div className="w-12 h-12 sm:w-14 sm:h-14 bg-red-600 rounded-full flex items-center justify-center shrink-0">
                                 <span className="text-white text-xl sm:text-2xl font-bold">
                                     {currentReview.initial}
                                 </span>

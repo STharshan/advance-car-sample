@@ -51,7 +51,7 @@ const PPFServices = () => {
     ];
 
     return (
-        <div className="bg-gradient-to-b from-gray-900 to-gray-800 py-12 px-8">
+        <div className="bg-linear-to-b from-gray-900 to-gray-800 py-12 px-8">
             <div className="max-w-8xl mx-auto">
                 <div className="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-4 gap-6">
                     {services.map((service, index) => (
@@ -111,7 +111,7 @@ const PPFServices = () => {
                             </div>
 
                             {/* Content - flex-grow pushes button to bottom */}
-                            <div className="p-6 flex flex-col flex-grow">
+                            <div className="p-6 flex flex-col grow">
                                 <h3 className="text-xl sm:text-2xl font-bold text-gray-900 mb-4 text-center">
                                     {service.title}
                                 </h3>
@@ -123,13 +123,13 @@ const PPFServices = () => {
                                     </p>
                                 </div>
 
-                                <div className="mb-6 flex-grow">
+                                <div className="mb-6 grow">
                                     <h4 className="font-semibold text-gray-900 mb-3">PPF Coverage</h4>
                                     <ul className="space-y-2">
                                         {service.coverage.map((item, idx) => (
                                             <li key={idx} className="flex items-start text-sm text-gray-600">
                                                 <svg
-                                                    className="w-5 h-5 text-green-600 mr-2 flex-shrink-0 mt-0.5"
+                                                    className="w-5 h-5 text-green-600 mr-2 shrink-0 mt-0.5"
                                                     fill="none"
                                                     stroke="currentColor"
                                                     viewBox="0 0 24 24"
@@ -148,7 +148,7 @@ const PPFServices = () => {
                                 </div>
 
                                 {/* Button stays at bottom */}
-                                <button className="w-full bg-gradient-to-r from-yellow-500 to-yellow-600 hover:from-yellow-600 hover:to-yellow-700 text-white font-semibold py-3 px-6 rounded-lg transition-all duration-300 transform hover:scale-105 shadow-md hover:shadow-lg mt-auto">
+                                <button className="w-full bg-linear-to-r from-yellow-500 to-yellow-600 hover:from-yellow-600 hover:to-yellow-700 text-white font-semibold py-3 px-6 rounded-lg transition-all duration-300 transform hover:scale-105 shadow-md hover:shadow-lg mt-auto">
                                     BOOK TODAY
                                 </button>
                             </div>

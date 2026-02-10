@@ -60,7 +60,7 @@ const Navbar = () => {
 
                 {/* Underline */}
                 <span
-                  className={`absolute left-0 -bottom-2 h-[2px] bg-white transition-all duration-300
+                  className={`absolute left-0 -bottom-2 h-0.5 bg-white transition-all duration-300
                   ${activeLink === link.href ? "w-full" : "w-0 group-hover:w-full"}`}
                 />
               </a>
