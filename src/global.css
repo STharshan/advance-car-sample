@@ -1,6 +1,6 @@
 :root {
-   --color-primary: rgb(99, 202, 30);
-   --color-secondary: rgb(190, 18, 18);
+   --color-primary: rgb(236, 32, 17);
+   --color-secondary: rgb(233, 50, 37);
 }
 
 .text-primary { color: var(--color-primary) !important; }
