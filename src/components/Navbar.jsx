@@ -1,4 +1,5 @@
 import React, { useState, useEffect } from "react";
+import ThemeToggle from "../components/ThemeToggle"; // adjust path if needed
 
 const Navbar = () => {
   const [isMenuOpen, setIsMenuOpen] = useState(false);
@@ -10,7 +11,6 @@ const Navbar = () => {
     { name: "OUR SERVICES", href: "#services" },
     { name: "PRICING", href: "#pricing" },
     { name: "GET A QUOTE", href: "#quote" },
-    { name: "BLOG", href: "#blog" },
     { name: "CONTACT", href: "#contact" },
   ];
 
@@ -35,43 +35,38 @@ const Navbar = () => {
 
   return (
     <nav className="absolute top-0 left-0 w-full z-50 bg-transparent">
-      <div className="max-w-7xl mx-auto px-6 lg:px-8">
+      <div className="max-w-8xl px-8 mx-auto">
         <div className="flex items-center justify-between h-24">
 
-          {/* Logo Image */}
-          <div className="flex items-center">
-            <img
-              src="/logo.png"
-              alt="Mirage Detailing"
-              className="h-8 object-contain"
-            />
+          {/* Logo on the left */}
+          <div className="shrink-0">
+            <img src="/logo.png" alt="Mirage Detailing" className="h-7 object-contain" />
           </div>
 
-          {/* Desktop Menu */}
+          {/* Desktop Menu in center */}
           <div className="hidden lg:flex items-center space-x-10">
             {navLinks.map((link) => (
               <a
                 key={link.href}
                 href={link.href}
                 onClick={() => setActiveLink(link.href)}
-                className="relative text-white text-sm font-semibold tracking-widest group"
+                className="relative text-white text-secondary-hover hover:font-semibold font-semibold tracking-widest group"
               >
                 {link.name}
-
-                {/* Underline */}
                 <span
-                  className={`absolute left-0 -bottom-2 h-0.5 bg-white transition-all duration-300
-                  ${activeLink === link.href ? "w-full" : "w-0 group-hover:w-full"}`}
+                  className={`absolute left-0 -bottom-2 h-1 bg-white transition-all duration-300
+                    ${activeLink === link.href ? "w-full" : "w-0 group-hover:w-full"}`}
                 />
               </a>
             ))}
           </div>
 
-          {/* Right Button */}
-          <div className="hidden lg:flex">
+          {/* "Get a Quote" + Theme Toggle on right */}
+          <div className="hidden lg:flex items-center space-x-4">
+            <ThemeToggle />
             <a
               href="#quote"
-              className="bg-red-600 text-white px-8 py-3 text-sm font-bold tracking-widest hover:bg-red-700 transition"
+              className="bg-primary bg-secondary-hover text-white px-6 py-3 text-sm font-bold tracking-widest rounded transition"
             >
               GET A QUOTE
             </a>
@@ -112,16 +107,21 @@ const Navbar = () => {
                   setIsMenuOpen(false);
                 }}
                 className={`block text-white text-sm font-bold tracking-widest border-b border-white/10 pb-2
-                  ${activeLink === link.href ? "text-red-600" : "hover:text-red-600"}`}
+                  ${activeLink === link.href ? "text-primary" : "text-secondary-hover"}`}
               >
                 {link.name}
               </a>
             ))}
+
+            {/* Dark/Light Mode Toggle */}
+            <div className="pt-4 flex justify-center">
+              <ThemeToggle className="w-full" />
+            </div>
           </div>
 
           <a
             href="#quote"
-            className="block bg-red-600 text-white text-center py-4 font-bold tracking-widest hover:bg-red-700 transition"
+            className="block bg-primary text-white text-center py-4 font-bold tracking-widest bg-secondary-hover transition"
           >
             GET A QUOTE
           </a>

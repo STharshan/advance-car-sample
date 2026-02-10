@@ -25,7 +25,7 @@ const AppointmentSection = () => {
     };
 
     return (
-        <div className="bg-gray-100 py-12 px-4 sm:px-6 lg:px-8">
+        <div className="bg-[#F3F4F6] dark:bg-black py-12 px-4 sm:px-6 lg:px-8">
             <div className="max-w-7xl mx-auto">
                 <div className="grid grid-cols-1 lg:grid-cols-2 gap-8 lg:gap-12">
                     {/* Left Side - Form with Image Text Effect */}
@@ -58,7 +58,7 @@ const AppointmentSection = () => {
                                     placeholder="Name"
                                     value={formData.name}
                                     onChange={handleChange}
-                                    className="w-full px-6 py-4 rounded-full border border-gray-300 focus:outline-none focus:border-red-500 transition-colors"
+                                    className="w-full px-6 py-4 rounded-full border border-gray-300 dark:border-gray-700 focus:outline-none focus:border-[#E7000B] dark:focus:border-[#E7000B] bg-white dark:bg-neutral-900 text-[#111827] dark:text-white transition-colors"
                                     required
                                 />
 
@@ -69,7 +69,7 @@ const AppointmentSection = () => {
                                     placeholder="Vehicle type"
                                     value={formData.vehicleType}
                                     onChange={handleChange}
-                                    className="w-full px-6 py-4 rounded-full border border-gray-300 focus:outline-none focus:border-red-500 transition-colors"
+                                    className="w-full px-6 py-4 rounded-full border border-gray-300 dark:border-gray-700 focus:outline-none focus:border-[#E7000B] dark:focus:border-[#E7000B] bg-white dark:bg-neutral-900 text-[#111827] dark:text-white transition-colors"
                                 />
                             </div>
 
@@ -81,21 +81,19 @@ const AppointmentSection = () => {
                                     placeholder="Phone number*"
                                     value={formData.phoneNumber}
                                     onChange={handleChange}
-                                    className="w-full px-6 py-4 rounded-full border border-gray-300 focus:outline-none focus:border-red-500 transition-colors"
+                                    className="w-full px-6 py-4 rounded-full border border-gray-300 dark:border-gray-700 focus:outline-none focus:border-[#E7000B] dark:focus:border-[#E7000B] bg-white dark:bg-neutral-900 text-[#111827] dark:text-white transition-colors"
                                     required
                                 />
 
                                 {/* Preferred Service Date */}
-                                <div className="relative">
-                                    <input
-                                        type="date"
-                                        name="preferredDate"
-                                        placeholder="Preferred service date"
-                                        value={formData.preferredDate}
-                                        onChange={handleChange}
-                                        className="w-full px-6 py-4 rounded-full border border-gray-300 focus:outline-none focus:border-red-500 transition-colors"
-                                    />
-                                </div>
+                                <input
+                                    type="date"
+                                    name="preferredDate"
+                                    placeholder="Preferred service date"
+                                    value={formData.preferredDate}
+                                    onChange={handleChange}
+                                    className="w-full px-6 py-4 rounded-full border border-gray-300 dark:border-gray-700 focus:outline-none focus:border-[#E7000B] dark:focus:border-[#E7000B] bg-white dark:bg-neutral-900 text-[#111827] dark:text-white transition-colors"
+                                />
                             </div>
 
                             <div className="grid grid-cols-1 sm:grid-cols-2 gap-4">
@@ -106,21 +104,19 @@ const AppointmentSection = () => {
                                     placeholder="Email*"
                                     value={formData.email}
                                     onChange={handleChange}
-                                    className="w-full px-6 py-4 rounded-full border border-gray-300 focus:outline-none focus:border-red-500 transition-colors"
+                                    className="w-full px-6 py-4 rounded-full border border-gray-300 dark:border-gray-700 focus:outline-none focus:border-[#E7000B] dark:focus:border-[#E7000B] bg-white dark:bg-neutral-900 text-[#111827] dark:text-white transition-colors"
                                     required
                                 />
 
                                 {/* Preferred Service Time */}
-                                <div className="relative">
-                                    <input
-                                        type="time"
-                                        name="preferredTime"
-                                        placeholder="Preferred service time"
-                                        value={formData.preferredTime}
-                                        onChange={handleChange}
-                                        className="w-full px-6 py-4 rounded-full border border-gray-300 focus:outline-none focus:border-red-500 transition-colors"
-                                    />
-                                </div>
+                                <input
+                                    type="time"
+                                    name="preferredTime"
+                                    placeholder="Preferred service time"
+                                    value={formData.preferredTime}
+                                    onChange={handleChange}
+                                    className="w-full px-6 py-4 rounded-full border border-gray-300 dark:border-gray-700 focus:outline-none focus:border-[#E7000B] dark:focus:border-[#E7000B] bg-white dark:bg-neutral-900 text-[#111827] dark:text-white transition-colors"
+                                />
                             </div>
 
                             {/* Additional Requests */}
@@ -130,13 +126,13 @@ const AppointmentSection = () => {
                                 value={formData.additionalRequests}
                                 onChange={handleChange}
                                 rows="5"
-                                className="w-full px-6 py-4 rounded-3xl border border-gray-300 focus:outline-none focus:border-red-500 transition-colors resize-none"
+                                className="w-full px-6 py-4 rounded-3xl border border-gray-300 dark:border-gray-700 focus:outline-none focus:border-[#E7000B] dark:focus:border-[#E7000B] bg-white dark:bg-neutral-900 text-[#111827] dark:text-white transition-colors resize-none"
                             ></textarea>
 
                             {/* Submit Button */}
                             <button
                                 type="submit"
-                                className="bg-red-600 hover:bg-red-700 text-white font-bold py-4 px-10 rounded-full transition-all duration-300 transform hover:scale-105 shadow-lg hover:shadow-xl uppercase text-sm tracking-wide"
+                                className="bg-primary bg-secondary-hover text-white font-bold py-4 px-10 rounded-full transition-all duration-300 transform hover:scale-105 shadow-lg hover:shadow-xl uppercase text-sm tracking-wide"
                             >
                                 Submit Message
                             </button>
@@ -144,24 +140,24 @@ const AppointmentSection = () => {
                     </div>
 
                     {/* Right Side - Contact Information */}
-                    <div className="space-y-8 lg:pl-8">
+                    <div className="space-y-8 lg:pl-8 text-[#111827] dark:text-white">
                         {/* Phone Section */}
                         <div>
-                            <h3 className="text-3xl sm:text-4xl font-black text-red-600 mb-4">
+                            <h3 className="text-3xl sm:text-4xl font-black text-primary mb-4">
                                 PHONE
                             </h3>
                             <div className="space-y-2">
-                                <p className="text-gray-700 text-lg">(406) 555-0120</p>
-                                <p className="text-gray-700 text-lg">(316) 555-0116</p>
+                                <p className="text-base sm:text-lg"> (406) 555-0120 </p>
+                                <p className="text-base sm:text-lg"> (316) 555-0116 </p>
                             </div>
                         </div>
 
                         {/* Kentucky Office Section */}
                         <div>
-                            <h3 className="text-3xl sm:text-4xl font-black text-red-600 mb-4">
+                            <h3 className="text-3xl sm:text-4xl font-black text-primary mb-4">
                                 KENTUCKY OFFICE
                             </h3>
-                            <p className="text-gray-700 text-lg">
+                            <p className="text-base sm:text-lg">
                                 4517 Washington Ave. Manchester,<br />
                                 Kentucky 39495
                             </p>
@@ -169,12 +165,12 @@ const AppointmentSection = () => {
 
                         {/* Opening Hours Section */}
                         <div>
-                            <h3 className="text-3xl sm:text-4xl font-black text-red-600 mb-4">
+                            <h3 className="text-3xl sm:text-4xl font-black text-primary mb-4">
                                 OPENING HOURS
                             </h3>
                             <div className="space-y-2">
-                                <p className="text-gray-700 text-lg">09:00 am - 06:00 pm</p>
-                                <p className="text-gray-700 text-lg">Monday - Friday</p>
+                                <p className="text-base sm:text-lg">09:00 am - 06:00 pm</p>
+                                <p className="text-base sm:text-lg">Monday - Friday</p>
                             </div>
                         </div>
                     </div>
