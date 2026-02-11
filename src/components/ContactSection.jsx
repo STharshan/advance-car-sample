@@ -33,13 +33,12 @@ const AppointmentSection = () => {
                     <div className="relative">
                         {/* Header with Image Clipping Effect */}
                         <div className="relative mb-8">
-                            <h2 
+                            <h2
                                 className="text-5xl sm:text-6xl lg:text-7xl font-black leading-none uppercase"
                                 style={{
                                     backgroundImage: `url("${appointmentContent.headingImage}")`,
                                     backgroundSize: 'cover',
-                                    backgroundPosition: 'center',
-                                    backgroundClip: 'text',
+                                    backgroundPosition: 'center 35%',                                     backgroundClip: 'text',
                                     WebkitBackgroundClip: 'text',
                                     WebkitTextFillColor: 'transparent',
                                     color: 'transparent'

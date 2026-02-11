@@ -12,8 +12,7 @@ export const HeroContent = {
 
 export const Services = [
   {
-    title: "Front Bumper PPF",
-    subtitle: "Paint Protection Film (PPF)",
+    subtitle: "Paint Protection Film",
     image: "/s1.png",
     coverage: [
       "Invisible clear protective film",
@@ -24,7 +23,6 @@ export const Services = [
     ],
   },
   {
-    title: "Front End PPF",
     subtitle: "Paint Correction",
     image: "/s2.png",
     coverage: [
@@ -36,7 +34,6 @@ export const Services = [
     ],
   },
   {
-    title: "Track Pack PPF",
     subtitle: "Ceramic Coating",
     image: "/s3.png",
     coverage: [
@@ -48,7 +45,6 @@ export const Services = [
     ],
   },
   {
-    title: "Full Car PPF",
     subtitle: "Exterior Wash",
     image: "/s4.png",
     coverage: [
@@ -96,7 +92,7 @@ export const reviewsData = [
 
 export const appointmentContent = {
   heading: "LET'S BOOK AN APPOINTMENT",
-  headingImage: "/about.png",
+  headingImage: "/im1.jpeg",
 
   submitText: "Submit Message",
 
@@ -105,10 +101,10 @@ export const appointmentContent = {
     "+44 161 496 0999"
   ],
 
-  officeTitle: "KENTUCKY OFFICE",
+  officeTitle: "LONDON OFFICE",
   officeAddress: [
-    "4517 Washington Ave. Manchester,",
-    "Kentucky 39495"
+    "45 Canary Wharf Plaza,",
+    "London E14 5AB"
   ],
 
   hoursTitle: "OPENING HOURS",
@@ -124,8 +120,8 @@ export const footerContent = {
 
   office: {
     title: "Office",
-    address: "Fields Farm Rd, Long Eaton, Nottingham NG10 1GA",
-    email: "office@mirage-car-detailing-nottingham.co.uk",
+    address: "45 Canary Wharf Plaza, London E14 5AB",
+    email: "office@-nottingham.co.uk",
     phone: "+44 7756 717 119"
   },
 

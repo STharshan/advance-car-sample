@@ -33,15 +33,11 @@ const PPFServices = ({ title = "OUR SERVICES", services = Services }) => {
               </div>
 
               <div className="p-6 flex flex-col grow">
-                <h3 className="text-xl sm:text-2xl font-bold text-center mb-1">
-                  {service.title}
+                <h3 className="text-xl sm:text-2xl font-bold text-center mb-5">
+                  {service.subtitle}
                 </h3>
 
                 <div className="mb-6 grow">
-                  <h4 className="font-semibold mb-3 mt-5">
-                    {service.subtitle}
-                  </h4>
-
                   <ul className="space-y-2">
                     {service.coverage.map((item, idx) => (
                       <li key={idx} className="flex items-start text-sm">
