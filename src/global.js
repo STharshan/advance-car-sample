@@ -11,7 +11,7 @@ export const HeroContent = {
 export const Services = [
   {
     subtitle: "Paint Correction",
-    image: "/s1.png",
+    image: "/p.jpeg",
     coverage: [
       "Removes swirl marks and light scratches",
       "Restores deep gloss and clarity",
@@ -22,7 +22,7 @@ export const Services = [
   },
   {
     subtitle: "Ceramic Coating",
-    image: "/s2.png",
+    image: "/c.jpeg",
     coverage: [
       "Long-lasting nano-ceramic protection",
       "Hydrophobic water-repellent surface",
@@ -33,7 +33,7 @@ export const Services = [
   },
 {
   subtitle: "Machine Polishing",
-  image: "/s4.png",
+  image: "/m.webp",
   coverage: [
     "Removes deeper swirl marks and surface imperfections",
     "Restores high-gloss shine and paint clarity",
