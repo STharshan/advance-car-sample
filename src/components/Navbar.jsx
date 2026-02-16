@@ -43,7 +43,7 @@ const Navbar = ({ logo = NavbarLogo.logo }) => {
           <img
             src={logo}
             alt="Logo"
-            className="h-7 object-contain"
+            className="h-15 object-contain"
           />
 
           {/* Desktop Menu */}

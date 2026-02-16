@@ -31,17 +31,17 @@ export const Services = [
       "Easier cleaning and maintenance",
     ],
   },
-  {
-    subtitle: "Paint Protection Film",
-    image: "/s3.png",
-    coverage: [
-      "Invisible clear protective film",
-      "Protects against stone chips and scratches",
-      "UV and weather resistance",
-      "Self-healing technology for minor scratches",
-      "Preserves original paint and resale value",
-    ],
-  },
+{
+  subtitle: "Machine Polishing",
+  image: "/s4.png",
+  coverage: [
+    "Removes deeper swirl marks and surface imperfections",
+    "Restores high-gloss shine and paint clarity",
+    "Reduces light scratches and oxidation",
+    "Professional machine-applied compounds and polish",
+    "Leaves paintwork smooth, vibrant, and refreshed",
+  ],
+},
 ];
 
 export const reviewsData = [
@@ -94,9 +94,9 @@ export const footerContent = {
 
   office: {
     title: "Office",
-    address: "45 Canary Wharf Plaza, London E14 5AB",
+    address: "Unit 15, 353 Bentley Rd, Doncaster DN5 9TJ",
     email: "office@-nottingham.co.uk",
-    phone: "+44 7756 717 119"
+    phone: "+447572 899259"
   },
 
   bottomBar: {
