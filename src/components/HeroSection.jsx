@@ -1,75 +1,140 @@
-import React from "react";
-import { Instagram, Facebook, ArrowDown } from "lucide-react";
-import { HeroContent } from "../global";
+import React, { useState } from 'react';
+import { Facebook, Instagram } from 'lucide-react';
+import { footerContent } from '../global'; // adjust path if needed
 
-export default function HeroSection({
-  instagramLabel = HeroContent.instagramLabel,
-  facebookLabel = HeroContent.facebookLabel,
-  tagline = HeroContent.tagline,
-  title = HeroContent.title,
-}) {
+const iconMap = {
+  Facebook: <Facebook size={20} />,
+  Instagram: <Instagram size={20} />
+};
+
+const socials = [
+  { name: "Facebook", href: "#", icon: "Facebook" },
+  { name: "Instagram", href: "#", icon: "Instagram" }
+];
+
+const Footer = () => {
+  const { brand, office, bottomBar } = footerContent;
+  const [showPopup, setShowPopup] = useState(false);
+
+  const handleSocialClick = (e) => {
+    e.preventDefault();
+    setShowPopup(true); // trigger popup
+  };
+
   return (
-    <div id="#" className="relative h-screen w-full overflow-hidden bg-black">
-      <div className="max-w-7xl mx-auto">
+    <>
+      <footer className="bg-black text-gray-300 py-16 px-6 md:px-12 font-sans">
+        <div className="max-w-7xl mx-auto">
+          <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-4 gap-12 mb-16">
 
-        {/* Background Video */}
-        <video
-          className="absolute inset-0 w-full h-full object-cover"
-          autoPlay
-          muted
-          loop
-          playsInline
-          poster="https://images.unsplash.com/photo-1618843479313-40f8afb4b4d8?q=80&w=2070"
-        >
-          <source src="/video.mp4" type="video/mp4" />
-        </video>
+            {/* Brand Section */}
+            <div>
+              <h3 className="text-white font-bold text-lg mb-6 uppercase tracking-wider">
+                {brand.title}
+              </h3>
+              <p className="leading-relaxed max-w-xs">{brand.description}</p>
+            </div>
 
-        {/* Overlay */}
-        <div
-          className="absolute inset-0"
-          style={{
-            background:
-              "linear-gradient(to bottom, rgba(0,0,0,0.35) 0%, rgba(0,0,0,0.65) 100%)",
-          }}
-        />
+            {/* Office Section */}
+            <div>
+              <h3 className="text-white font-bold text-lg mb-6 uppercase tracking-wider">
+                {office.title}
+              </h3>
+              <address className="not-italic space-y-4">
+                {/* Clickable Address */}
+                <a
+                  href={`https://www.google.com/maps/search/${encodeURIComponent(office.address)}`}
+                  target="_blank"
+                  rel="noopener noreferrer"
+                  className="hover:text-white cursor-pointer block"
+                >
+                  {office.address}
+                </a>
 
-        {/* Social Media */}
-        <div className="absolute left-5 md:left-8 top-[30%] flex flex-col gap-8 md:gap-10 z-20">
+                {/* Clickable Email */}
+                <div className="pt-2">
+                  <a
+                    href={`mailto:${office.email}`}
+                    className="hover:text-white transition-colors cursor-pointer wrap-break-word"
+                  >
+                    {office.email}
+                  </a>
+                </div>
 
-          <div className="flex flex-col items-center gap-3">
-            <Instagram className="text-white" size={22} />
-            <span className="text-white text-sm" style={{ writingMode: "vertical-rl" }}>
-              Instagram
-            </span>
+                {/* Clickable Phone */}
+                <a
+                  href={`tel:${office.phone.replace(/\s+/g, '')}`}
+                  className="text-white font-bold text-xl pt-2 hover:text-white cursor-pointer block"
+                >
+                  {office.phone}
+                </a>
+              </address>
+            </div>
+
+            {/* Links Section */}
+            <div>
+              <h3 className="text-white font-bold text-lg mb-6 uppercase tracking-wider">
+                Links
+              </h3>
+              <ul className="space-y-3">
+                <li><a href="#" className="hover:text-white transition-colors">Home</a></li>
+                <li><a href="#services" className="hover:text-white transition-colors">Services</a></li>
+                <li><a href="#testimonials" className="hover:text-white transition-colors">Testimonials</a></li>
+                <li><a href="#contact" className="hover:text-white transition-colors">Contact</a></li>
+              </ul>
+            </div>
+
+            {/* Get In Touch Section */}
+            <div>
+              <h3 className="text-white font-bold text-lg mb-6 uppercase tracking-wider">
+                Get In Touch
+              </h3>
+              <div className="space-y-4">
+                {socials.map((social, idx) => (
+                  <a
+                    key={idx}
+                    href={social.href}
+                    onClick={handleSocialClick} // trigger popup
+                    className="flex items-center gap-3 hover:text-white transition-colors"
+                  >
+                    {iconMap[social.icon]}
+                    <span>{social.name}</span>
+                  </a>
+                ))}
+              </div>
+            </div>
+
           </div>
 
-          <div className="flex flex-col items-center gap-3">
-            <Facebook className="text-white" size={22} />
-            <span className="text-white text-sm" style={{ writingMode: "vertical-rl" }}>
-              Facebook
-            </span>
+          {/* Bottom Bar */}
+          <div className="border-t border-gray-800 pt-8 text-sm flex flex-col md:flex-row items-center justify-between">
+            <p>{bottomBar.copyright}</p>
+            <p>
+              Powered by <a href="https://www.ansely.co.uk" target='_blank' className="text-white hover:underline">Ansely</a>
+            </p>
           </div>
-
         </div>
+      </footer>
 
-        {/* Main Content */}
-        <div className="absolute bottom-[15%] left-8 md:left-16 z-20">
-          <p className="text-white text-[11px] md:text-sm tracking-[0.2em] font-semibold mb-6">
-            {tagline}
-          </p>
-
-          <h1 className="text-primary text-[3.8rem] sm:text-[5rem] md:text-[7rem] lg:text-[9rem] font-bold leading-[0.85]">
-            {title}
-          </h1>
+      {/* ===== POPUP ===== */}
+      {showPopup && (
+        <div className="fixed inset-0 bg-black/70 flex items-center justify-center z-999">
+          <div className="bg-white rounded-2xl p-6 max-w-md w-[90%] text-center shadow-xl">
+            <h2 className="text-xl font-bold mb-4">Notice</h2>
+            <p className="text-gray-700 mb-6 leading-relaxed">
+              When you click this button, you’ll be redirected to our official social media page to see updates, content and customer work.
+            </p>
+            <button
+              onClick={() => setShowPopup(false)}
+              className="bg-primary text-white px-6 py-2 rounded-full font-semibold hover:opacity-90 transition"
+            >
+              Got it
+            </button>
+          </div>
         </div>
-
-        {/* Scroll Down */}
-        <div className="absolute bottom-8 right-8 md:right-16 flex items-center gap-3 text-white z-20">
-          <span className="text-[10px] md:text-xs tracking-[0.3em]">SCROLL DOWN</span>
-          <ArrowDown className="animate-bounce" size={16} />
-        </div>
-
-      </div>
-    </div>
+      )}
+    </>
   );
-}
+};
+
+export default Footer;
