@@ -9,7 +9,7 @@ export default function HeroSection({
   title = HeroContent.title,
 }) {
   return (
-    <div className="relative h-screen w-full overflow-hidden bg-black">
+    <div id="#" className="relative h-screen w-full overflow-hidden bg-black">
       <div className="max-w-7xl mx-auto">
 
         {/* Background Video */}
@@ -39,14 +39,14 @@ export default function HeroSection({
           <div className="flex flex-col items-center gap-3">
             <Instagram className="text-white" size={22} />
             <span className="text-white text-sm" style={{ writingMode: "vertical-rl" }}>
-              {instagramLabel}
+              Instagram
             </span>
           </div>
 
           <div className="flex flex-col items-center gap-3">
             <Facebook className="text-white" size={22} />
             <span className="text-white text-sm" style={{ writingMode: "vertical-rl" }}>
-              {facebookLabel}
+              Facebook
             </span>
           </div>
 

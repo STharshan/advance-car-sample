@@ -7,8 +7,13 @@ const iconMap = {
   Instagram: <Instagram size={20} />
 };
 
+ const  socials = [
+    { name: "Facebook", href: "#", icon: "Facebook" },
+    { name: "Instagram", href: "#", icon: "Instagram" }
+ ];
+
 const Footer = () => {
-  const { brand, office, socials, bottomBar } = footerContent;
+  const { brand, office, bottomBar } = footerContent;
 
   return (
     <footer className="bg-black text-gray-300 py-16 px-6 md:px-12 font-sans">
@@ -49,9 +54,9 @@ const Footer = () => {
             </h3>
             <ul className="space-y-3">
               <li><a href="#" className="hover:text-white transition-colors">Home</a></li>
-              <li><a href="#" className="hover:text-white transition-colors">About Us</a></li>
-              <li><a href="#" className="hover:text-white transition-colors">Services</a></li>
-              <li><a href="#" className="hover:text-white transition-colors">Contact</a></li>
+              <li><a href="#services" className="hover:text-white transition-colors">Services</a></li>
+              <li><a href="#testimonials" className="hover:text-white transition-colors">Testimonials</a></li>
+              <li><a href="#contact" className="hover:text-white transition-colors">Contact</a></li>
             </ul>
           </div>
 
@@ -61,6 +66,7 @@ const Footer = () => {
               Get In Touch
             </h3>
             <div className="space-y-4">
+              
               {socials.map((social, idx) => (
                 <a
                   key={idx}
@@ -75,12 +81,11 @@ const Footer = () => {
           </div>
 
         </div>
-
         {/* Bottom Bar */}
         <div className="border-t border-gray-800 pt-8 text-sm flex flex-col md:flex-row items-center justify-between">
           <p>{bottomBar.copyright}</p>
           <p>
-            Powered by <a href={bottomBar.poweredBy.href} className="text-white hover:underline">{bottomBar.poweredBy.name}</a>
+            Powered by <a href="https://www.ansely.co.uk" target='_blank' className="text-white hover:underline">Ansely</a>
           </p>
         </div>
       </div>

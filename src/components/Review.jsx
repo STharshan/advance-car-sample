@@ -27,7 +27,7 @@ const Reviews = ({ title = "CLIENT'S REVIEWS", reviews = reviewsData }) => {
   );
 
   return (
-    <div className="bg-[#F3F4F6] dark:bg-black py-12 px-4 sm:px-6 lg:px-8">
+    <div id="testimonials" className="bg-[#F3F4F6] dark:bg-black py-12 px-4 sm:px-6 lg:px-8">
       <div className="max-w-7xl mx-auto">
 
         {/* Header */}

@@ -1,5 +1,5 @@
 import React, { useState } from 'react';
-import { appointmentContent } from '../global';
+import { appointmentContent, footerContent } from '../global';
 
 const AppointmentSection = () => {
     const [formData, setFormData] = useState({
@@ -25,8 +25,10 @@ const AppointmentSection = () => {
         console.log('Form submitted:', formData);
     };
 
+    const { office } = footerContent;
+
     return (
-        <div className="bg-[#F3F4F6] dark:bg-black py-12 px-4 sm:px-6 lg:px-8">
+        <div id='contact' className="bg-[#F3F4F6] dark:bg-black py-12 px-4 sm:px-6 lg:px-8">
             <div className="max-w-7xl mx-auto">
                 <div className="grid grid-cols-1 lg:grid-cols-2 gap-8 lg:gap-12">
                     {/* Left Side - Form with Image Text Effect */}
@@ -124,7 +126,7 @@ const AppointmentSection = () => {
                                 type="submit"
                                 className="bg-primary bg-secondary-hover text-white font-bold py-4 px-10 rounded-full transition-all duration-300 transform hover:scale-105 shadow-lg hover:shadow-xl uppercase text-sm tracking-wide"
                             >
-                                {appointmentContent.submitText}
+                                Submit Message
                             </button>
                         </form>
                     </div>
@@ -136,20 +138,16 @@ const AppointmentSection = () => {
                                 PHONE
                             </h3>
                             <div className="space-y-2">
-                                {appointmentContent.phones.map((phone, i) => (
-                                    <p key={i} className="text-base sm:text-lg">{phone}</p>
-                                ))}
+                               {office.phone}
                             </div>
                         </div>
 
                         <div>
                             <h3 className="text-3xl sm:text-4xl font-black text-primary mb-4">
-                                {appointmentContent.officeTitle}
+                                LONDON OFFICE
                             </h3>
                             <p className="text-base sm:text-lg">
-                                {appointmentContent.officeAddress.map((line, i) => (
-                                    <span key={i}>{line}<br /></span>
-                                ))}
+                                {office.address} 
                             </p>
                         </div>
 

@@ -4,27 +4,14 @@ export const NavbarLogo = {
 };
 
 export const HeroContent = {
-  instagramLabel: "Instagram",
-  facebookLabel: "Facebook",
   tagline: "FULL SERVICE AND EXCELLENT QUALITY",
   title: "CAR DETAILING",
 };
 
 export const Services = [
   {
-    subtitle: "Paint Protection Film",
-    image: "/s1.png",
-    coverage: [
-      "Invisible clear protective film",
-      "Protects against stone chips and scratches",
-      "UV and weather resistance",
-      "Self-healing technology (minor scratches)",
-      "Preserves original paint and resale value",
-    ],
-  },
-  {
     subtitle: "Paint Correction",
-    image: "/s2.png",
+    image: "/s1.png",
     coverage: [
       "Removes swirl marks and light scratches",
       "Restores deep gloss and clarity",
@@ -35,7 +22,7 @@ export const Services = [
   },
   {
     subtitle: "Ceramic Coating",
-    image: "/s3.png",
+    image: "/s2.png",
     coverage: [
       "Long-lasting nano-ceramic protection",
       "Hydrophobic water-repellent surface",
@@ -45,14 +32,14 @@ export const Services = [
     ],
   },
   {
-    subtitle: "Exterior Wash",
-    image: "/s4.png",
+    subtitle: "Paint Protection Film",
+    image: "/s3.png",
     coverage: [
-      "Safe hand wash using premium products",
-      "Removes dirt, dust, and road grime",
-      "Gentle on paint and trims",
-      "Spot-free drying and finishing",
-      "Keeps vehicle looking fresh and clean",
+      "Invisible clear protective film",
+      "Protects against stone chips and scratches",
+      "UV and weather resistance",
+      "Self-healing technology for minor scratches",
+      "Preserves original paint and resale value",
     ],
   },
 ];
@@ -94,19 +81,6 @@ export const appointmentContent = {
   heading: "LET'S BOOK AN APPOINTMENT",
   headingImage: "/im1.jpeg",
 
-  submitText: "Submit Message",
-
-  phones: [
-    "+44 20 7946 0958",
-    "+44 161 496 0999"
-  ],
-
-  officeTitle: "LONDON OFFICE",
-  officeAddress: [
-    "45 Canary Wharf Plaza,",
-    "London E14 5AB"
-  ],
-
   hoursTitle: "OPENING HOURS",
   hoursTime: "09:00 am - 06:00 pm",
   hoursDays: "Monday - Friday"
@@ -125,14 +99,8 @@ export const footerContent = {
     phone: "+44 7756 717 119"
   },
 
-  socials: [
-    { name: "Facebook", href: "#", icon: "Facebook" },
-    { name: "Instagram", href: "#", icon: "Instagram" }
-  ],
-
   bottomBar: {
     copyright: "Mirage Car Detailing Nottingham © 2026. All rights reserved.",
-    poweredBy: { name: "Ansely", href: "https://www.ansely.co.uk" }
   }
 };
 

@@ -4,7 +4,7 @@ import { Services } from "../global";
 
 const PPFServices = ({ title = "OUR SERVICES", services = Services }) => {
   return (
-    <div className="bg-[#F3F4F6] dark:bg-black py-12">
+    <div id="services" className="bg-[#F3F4F6] dark:bg-black py-12">
       <div className="max-w-7xl mx-auto">
 
         {/* Section Heading */}
@@ -18,7 +18,7 @@ const PPFServices = ({ title = "OUR SERVICES", services = Services }) => {
         </div>
 
         {/* Service Cards */}
-        <div className="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-4 gap-6">
+        <div className="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-3 gap-6">
           {services.map((service, index) => (
             <div
               key={index}

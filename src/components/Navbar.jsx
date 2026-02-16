@@ -7,11 +7,11 @@ const Navbar = ({ logo = NavbarLogo.logo }) => {
   const [activeLink, setActiveLink] = useState("#home");
 
   const navLinks = [
-    { name: "HOME", href: "#home" },
+    { name: "HOME", href: "#" },
     { name: "ABOUT US", href: "#about" },
     { name: "OUR SERVICES", href: "#services" },
     { name: "PRICING", href: "#pricing" },
-    { name: "GET A QUOTE", href: "#quote" },
+    { name: "TESTIMONIALS", href: "#testimonials" },
     { name: "CONTACT", href: "#contact" },
   ];
 
